@@ -1,4 +1,5 @@
 #!/bin/bash
+#Need to install pm by : apt-get install powermanagement-interface
 echo "+-+-+ Welcome to +-+-+"
 echo ".+-+-+-+-+.+-+-+-+-+-+";
 echo ".|H|o|m|e|.|A|l|o|n|e|";
@@ -33,6 +34,8 @@ elif [[ $choice -eq 4 ]]; then
   read -p "Set minutes to Sleep: " slptime
   sudo apt-get update
   sudo apt-get upgrade
+  sudo apt-get autoremove
+  sudo apt-get autoclean
   sudo sleep $slptime\m
   sudo pm-suspend
 

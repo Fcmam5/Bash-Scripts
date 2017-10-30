@@ -24,8 +24,7 @@ if [ $choice -eq 1 ]; then
 		sudo shutdown -P +$stmin
 
 elif [ $choice -eq 2 ]; then
-sudo apt-get update && sudo apt-get upgrade && sudo reboot
-
+sudo apt-get update && sudo apt-get upgrade -y && sudo reboot now
 elif [[ $choice -eq 3 ]]; then
   #Suspend
   sudo pm-suspend
@@ -33,7 +32,7 @@ elif [[ $choice -eq 4 ]]; then
   #Update, Clean & Suspend
   read -p "Set minutes to Sleep: " slptime
   sudo apt-get update
-  sudo apt-get upgrade
+  sudo apt-get upgrade -y
   sudo apt-get autoremove
   sudo apt-get autoclean
   sudo sleep $slptime\m
